@@ -2,7 +2,7 @@
 
 **Your Music. Your Experience.**
 
-Marshall is an Android music player that brings your music library, playback controls, and immersive listening experience together. This Android project is adapted from the BitChord 1.9.1 source and presents Marshall branding; the separate Windows project is not included here.
+Marshall is an Android music player that brings your music library, playback controls, and immersive listening experience together. This Android project is adapted from the Apple music and YT muisc source and presents Marshall branding; the separate Windows project is not included here.
 
 [![Repository](https://img.shields.io/badge/GitHub-Marshall--Android-181717?logo=github)](https://github.com/bhagyarajkota45/Marshall-Android)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
