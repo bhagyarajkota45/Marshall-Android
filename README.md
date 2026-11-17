@@ -19,11 +19,18 @@ Marshall combines a modern Android interface with music browsing, playback, and 
   <img src="docs/screenshots/marshall-home.jpg" alt="Marshall home screen showing music, playback controls, and navigation" width="300">
 </p>
 
-### 🎤 Now Playing / Lyrics
-
-<p align="center">
-  <img src="docs/screenshots/marshall-lyrics.jpg" alt="Marshall Now Playing lyrics screen with synchronized lyrics" width="300">
-</p>
+<table>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <h3>🎤 Now Playing / Lyrics</h3>
+      <img src="docs/screenshots/marshall-lyrics.jpg" alt="Marshall Now Playing lyrics screen with synchronized lyrics" width="100%">
+    </td>
+    <td align="center" valign="top" width="50%">
+      <h3>🎧 Now Playing — Landscape Mode</h3>
+      <img src="docs/screenshots/marshall-now-playing-landscape.jpg" alt="Marshall Now Playing screen in landscape mode" width="100%">
+    </td>
+  </tr>
+</table>
 
 ## 🚀 Features
 
