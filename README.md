@@ -94,4 +94,4 @@ Please report bugs and propose changes in the [GitHub issue tracker](https://git
 
 ## 📜 License and Credits
 
-Marshall retains its upstream GNU General Public License v3.0 (GPLv3), copyright and source notices, and third-party attributions. This Android source is adapted from BitChord 1.9.1. See [LICENSE](LICENSE), [UPSTREAM_ATTRIBUTION.md](UPSTREAM_ATTRIBUTION.md), and [ADDITIONAL.md](ADDITIONAL.md) for license and credit details.
+Marshall retains its upstream GNU General Public License v3.0 (GPLv3), copyright and source notices, and third-party attributions. This Android source is adapted from YT music & Apple Music. See [LICENSE](LICENSE), [UPSTREAM_ATTRIBUTION.md](UPSTREAM_ATTRIBUTION.md), and [ADDITIONAL.md](ADDITIONAL.md) for license and credit details.
