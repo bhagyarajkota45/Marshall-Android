@@ -1,0 +1,15 @@
+# Copy this file to local.properties and set values for your machine.
+# Do not commit local.properties or real credentials.
+sdk.dir=
+
+# Optional provider credentials.
+LASTFM_API_KEY=
+LASTFM_SECRET=
+POTOKEN_GOOGLE_API_KEY=
+POTOKEN_REQUEST_KEY=
+
+# Optional Marshall-owned service URLs.
+UPDATE_LATEST_RELEASE_URL=
+DISCORD_PROJECT_URL=
+LISTEN_TOGETHER_SERVER=
+ADDON_AUTH_SERVER=
