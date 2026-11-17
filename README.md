@@ -1,52 +1,76 @@
-# Marshall Music Player for Android
+# 🎵 Marshall Android
 
-![Marshall logo](branding/Marshall-logo-2160x2160.png)
+**Your Music. Your Experience.**
 
-Marshall is an Android music player source project adapted from the BitChord 1.9.1 Android source. It retains the Android app architecture and presents Marshall branding. The separate Windows Marshall project is not included or modified.
+Marshall is an Android music player that brings your music library, playback controls, and immersive listening experience together. This Android project is adapted from the BitChord 1.9.1 source and presents Marshall branding; the separate Windows project is not included here.
 
-Repository: [bhagyarajkota45/Marshall-Android](https://github.com/bhagyarajkota45/Marshall-Android)
+[![Repository](https://img.shields.io/badge/GitHub-Marshall--Android-181717?logo=github)](https://github.com/bhagyarajkota45/Marshall-Android)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 
-## Features
+## ✨ About Marshall
 
-- Search, browse, stream, and manage music, queues, playlists, favorites, downloads, and local files.
-- Background playback, media controls, audio effects, equalizer, crossfade, and playback options.
-- Word-timed lyrics with active-word highlighting, plus translation and romanization when supported by the source.
-- Matching Spotify Canvas clips in player and lyrics views, with static artwork as a fallback.
-- Existing Google, Spotify, Discord, Last.fm, ListenBrainz, and Listen Together integration flows.
-- Android phone, TV, and Wear OS modules.
+Marshall combines a modern Android interface with music browsing, playback, and lyric experiences. The project includes phone, Android TV, and Wear OS modules, alongside shared Kotlin code and native audio components.
 
-Feature and setup details are documented in [FEATURE_STATUS.md](FEATURE_STATUS.md).
+## 📱 Screenshots
 
-## Technology
+### 🏠 Home
 
-- Kotlin, Jetpack Compose, and Kotlin Multiplatform.
-- Android Gradle Plugin with the included Gradle wrapper.
-- Native C++ audio components.
-- Optional Go Listen Together backend in `backend/`.
+<p align="center">
+  <img src="docs/screenshots/marshall-home.jpg" alt="Marshall home screen showing music, playback controls, and navigation" width="300">
+</p>
 
-## Screenshots
+### 🎤 Now Playing / Lyrics
 
-No in-app screenshots are currently included in this repository. The image above is the project logo, not an app screenshot.
+<p align="center">
+  <img src="docs/screenshots/marshall-lyrics.jpg" alt="Marshall Now Playing lyrics screen with synchronized lyrics" width="300">
+</p>
 
-## Build and install
+## 🚀 Features
 
-Requirements: JDK 17, Android SDK Platform 37, Android NDK `28.2.13676358`, and CMake `3.22.1`. The included Gradle wrapper uses Gradle 8.14.4.
+- 🎶 Browse and search music, and manage queues, playlists, favorites, downloads, and local files.
+- ▶️ Background playback, media controls, audio effects, equalizer, crossfade, and playback options.
+- 🎤 Word-timed lyrics with active-word highlighting; translation and romanization paths are included.
+- 🎞️ Matching Spotify Canvas clips in the player and lyrics views, with static artwork as a fallback.
+- 📺 Android phone and TV experiences, plus a Wear OS module.
+- 🔗 Existing Google, Spotify, Discord, Last.fm, ListenBrainz, and Listen Together integration flows; some require local or provider-side configuration.
 
-Copy `local.properties.example` to `local.properties`, then set `sdk.dir` to your Android SDK location. `local.properties` is machine-specific and ignored by Git.
+See [FEATURE_STATUS.md](FEATURE_STATUS.md) for verified scope, setup requirements, and known limitations.
 
-On Windows, build the production-debug phone app with:
+## 🎧 Music Experience
+
+The player brings the library, playback controls, and lyrics into one Android experience. Word-timed lyrics can highlight the active word as playback progresses. When a matching Spotify Canvas clip is available, the player and lyrics views can display it; otherwise, the app falls back to static artwork.
+
+## 🛠️ Technology Stack
+
+| Area | Technology |
+| --- | --- |
+| Android UI and app | Kotlin, Jetpack Compose |
+| Shared code | Kotlin Multiplatform |
+| Build system | Gradle wrapper |
+| Audio components | Native C++ |
+| Optional Listen Together server | Go (`backend/`) |
+
+## 📥 Installation
+
+There is no prebuilt APK included in this source repository. To install a production-debug build on a connected Android device:
+
+1. Install JDK 17 and configure the Android SDK, Platform 37, NDK `28.2.13676358`, and CMake `3.22.1`.
+2. Copy `local.properties.example` to `local.properties` and set `sdk.dir` to your Android SDK location. This machine-specific file is ignored by Git.
+3. From the repository root, build and install:
+
+   ```powershell
+   .\gradlew.bat :app:installProdDebug --no-daemon --console=plain
+   ```
+
+Enable USB debugging and connect your device first. On macOS or Linux, use `./gradlew` with the same Gradle task.
+
+## 🏗️ Build from Source
+
+The included Gradle wrapper uses Gradle 8.14.4. With the prerequisites and `local.properties` configured as described above, build the production-debug phone app with:
 
 ```powershell
 .\gradlew.bat :app:assembleProdDebug --no-daemon --console=plain
 ```
-
-Install it on a connected device with USB debugging enabled:
-
-```powershell
-.\gradlew.bat :app:installProdDebug --no-daemon --console=plain
-```
-
-On macOS or Linux, use `./gradlew` with the same Gradle tasks.
 
 Run the phone and shared-module unit tests with:
 
@@ -54,16 +78,18 @@ Run the phone and shared-module unit tests with:
 .\gradlew.bat :app:testProdDebugUnitTest :shared:jvmTest :sharedUi:jvmTest --no-daemon --console=plain
 ```
 
-## Local integration configuration
+On macOS or Linux, use `./gradlew` with the same tasks.
+
+## ⚙️ Local Integration Configuration
 
 Provider credentials and deployment-specific values belong in ignored `local.properties` or environment variables, never in source control. Optional properties include `LASTFM_API_KEY`, `LASTFM_SECRET`, `POTOKEN_GOOGLE_API_KEY`, `POTOKEN_REQUEST_KEY`, `UPDATE_LATEST_RELEASE_URL`, `DISCORD_PROJECT_URL`, `LISTEN_TOGETHER_SERVER`, and `ADDON_AUTH_SERVER`. The PoToken request path needs its local key values; the project builds without them, but that path will not be configured.
 
 The app retains upstream compatibility service hosts where no Marshall-owned endpoint was supplied. Listen Together and addon authentication can be redirected with `LISTEN_TOGETHER_SERVER` and `ADDON_AUTH_SERVER`. The updater and Discord project link remain inactive until `UPDATE_LATEST_RELEASE_URL` and `DISCORD_PROJECT_URL` are configured. Google and Spotify sign-in may require provider-side registration for the Android package ID `com.marshall.music`.
 
-## Issues and contributions
+## 🤝 Contributing
 
 Please report bugs and propose changes in the [GitHub issue tracker](https://github.com/bhagyarajkota45/Marshall-Android/issues). Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
-## License and attribution
+## 📜 License and Credits
 
-This project retains its upstream GPLv3 license, copyright and source notices, and third-party attributions. See [LICENSE](LICENSE), [UPSTREAM_ATTRIBUTION.md](UPSTREAM_ATTRIBUTION.md), and [ADDITIONAL.md](ADDITIONAL.md).
+Marshall retains its upstream GNU General Public License v3.0 (GPLv3), copyright and source notices, and third-party attributions. This Android source is adapted from BitChord 1.9.1. See [LICENSE](LICENSE), [UPSTREAM_ATTRIBUTION.md](UPSTREAM_ATTRIBUTION.md), and [ADDITIONAL.md](ADDITIONAL.md) for license and credit details.
